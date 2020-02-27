@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>View Product</title>
+</head>
+<body>
+	<div>
+		<h1>Product List</h1> 		
+	</div>
+	
+	<a href="/logout"> logout</a><br>
+
+	<table border="1">
+		<tr>
+			<td>ID</td>
+			<td>Product Name</td>
+			<td>Catagory</td>
+			<td>Sub Catagory</td>
+			<td>Brand</td>
+			<td>Quantity</td>
+		</tr>
+		<% for(var i=0; i < productList.length; i++){ %>
+		<tr>
+			<td><%= productList[i].id %></td>
+			<td><%= productList[i].productName %></td>
+			<td><%= productList[i].catagory %></td>
+			<td><%= productList[i].subCatagory %></td>
+			<td><%= productList[i].brand %></td>
+			<td><%= productList[i].quantity %></td>
+			<td>
+				<a href="/home/edit/<%= productList[i].id %>">EDIT</a> | 
+				<a href="/home/delete/<%= productList[i].id %>">DELETE</a>  
+			</td>
+		</tr>
+		<% } %>
+	</table>
+</body>
+</html>
